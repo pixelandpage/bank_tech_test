@@ -1,21 +1,21 @@
 class Account
-  require_relative 'statement'
-  attr_reader :balance, :statement
+  require_relative 'transaction'
+  attr_reader :balance, :transaction
   BALANCE = @balance
 
-  def initialize(statement = Statement)
+  def initialize(transaction = Transaction)
     @balance = 0
-    @statement = statement.new
+    @transaction = transaction.new
   end
 
   def credit(amount)
     @balance += amount
-    @statement.add_credit(amount)
+    @transaction.credit(amount)
   end
 
   def debit(amount)
     @balance -= amount
-    @statement.add_debit(amount)
+    @transaction.debit(amount)
   end
 
 end

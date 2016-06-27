@@ -1,6 +1,6 @@
-require 'statement'
+require 'transaction'
 
-describe Statement do
+describe Transaction do
 
   describe "#initalize" do
     it "starts with an empty transaction log" do
@@ -10,15 +10,15 @@ describe Statement do
 
   describe 'crediting account' do
     it 'should add a credit transaction to the log' do
-      subject.add_credit(10)
-      expect(subject.log).to eq ['credit 10']
+      subject.credit(10)
+      expect(subject.log).to eq ['10 || || ']
     end
   end
 
   describe 'debiting account' do
     it 'should add a debit transaction to the log' do
-      subject.add_debit(10)
-      expect(subject.log).to eq ['debit 10']
+      subject.debit(10)
+      expect(subject.log).to eq [' || 10 || ']
     end
   end
 
