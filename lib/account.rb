@@ -7,4 +7,12 @@ class Account
     @statement = statement.new
   end
 
+  def credit(amount)
+    @balance += amount
+  end
+
+  def debit(amount)
+    @balance -= amount
+  end
+
 end
