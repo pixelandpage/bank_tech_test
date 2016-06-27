@@ -10,12 +10,14 @@ class Account
 
   def credit(amount)
     @balance += amount
-    @transaction.credit(amount)
+    bal = @balance
+    @transaction.credit(amount, bal)
   end
 
   def debit(amount)
     @balance -= amount
-    @transaction.debit(amount)
+    bal = @balance
+    @transaction.debit(amount, bal)
   end
 
 end
