@@ -8,6 +8,10 @@ class Account
     @transaction = transaction.new
   end
 
+  def balance
+    @balance
+  end
+
   def credit(amount)
     @balance += amount
     bal = @balance
@@ -19,5 +23,7 @@ class Account
     bal = @balance
     @transaction.debit(amount, bal)
   end
+
+
 
 end

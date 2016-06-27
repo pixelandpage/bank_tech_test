@@ -8,6 +8,13 @@ describe Account do
     end
   end
 
+  describe '#balance' do
+    it 'displays the balance' do
+      subject.credit 1000
+      expect(subject.balance).to eq 1000
+    end
+  end
+
   describe '#credit' do
     it 'can add credit to an account' do
       expect{subject.credit 10}.to change {subject.balance}.by 10
