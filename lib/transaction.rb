@@ -21,4 +21,11 @@ class Transaction
     '%.2f' % input.to_s
   end
 
+  def statement
+    p "date || credit || debit || balance \n" + print_each
+  end
+
+  def print_each
+    log.reverse.each { |x| p x }.join("\n")
+  end
 end

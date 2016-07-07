@@ -29,4 +29,11 @@ describe Transaction do
     end
   end
 
+  describe '#statement' do
+    it 'should display a statement' do
+      subject.credit(1000, 1000)
+      expect(subject.statement).to eq "date || credit || debit || balance \n27/06/2016 || 1000.00 || || 1000.00"
+    end
+  end
+
 end

@@ -1,4 +1,5 @@
 require 'account'
+require 'spec_helper'
 
 describe Account do
 

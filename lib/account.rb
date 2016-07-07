@@ -24,6 +24,9 @@ class Account
     @transaction.debit(amount, bal)
   end
 
+  def statement
+    @transaction.statement
+  end
 
 
 end
